@@ -21,8 +21,8 @@ public class AnalyticsController {
     }
 
     @PreAuthorize("hasRole('ADMIN') or hasRole('ANALYTICS_OFFICER')")
-    @GetMapping("/region/{h3}")
-    public List<RegionSkillStats> getByRegion(@PathVariable String h3) {
-        return repository.findByH3RegionIndex(h3);
+    @GetMapping("/region/{h3RegionIndex}")
+    public List<RegionSkillStats> byRegion(@PathVariable String h3RegionIndex) {
+        return repository.findByH3RegionIndex(h3RegionIndex);
     }
 }

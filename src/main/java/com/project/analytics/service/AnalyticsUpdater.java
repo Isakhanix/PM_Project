@@ -21,12 +21,10 @@ public class AnalyticsUpdater {
         RegionSkillStats stats = statsRepository
                 .findByH3RegionIndexAndSkillId(h3RegionIndex, skillId)
                 .orElseGet(() -> {
-                    RegionSkillStats item = new RegionSkillStats();
-                    item.setH3RegionIndex(h3RegionIndex);
-                    item.setSkillId(skillId);
-                    item.setAttempts(0);
-                    item.setCorrect(0);
-                    return item;
+                    RegionSkillStats created = new RegionSkillStats();
+                    created.setH3RegionIndex(h3RegionIndex);
+                    created.setSkillId(skillId);
+                    return created;
                 });
 
         stats.setAttempts(stats.getAttempts() + 1);
