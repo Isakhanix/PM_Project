@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Java Fundamentals – LearnCenter</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+ <header class="site-header">
+  <div class="container nav-inner">
+
+
+    <a class="logo" href="#">CodeLab</a>
+
+
+    <form class="nav-search" role="search">
+      <button type="submit" class="search-btn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+      </button>
+      <input type="text" placeholder="Search courses..." aria-label="Search">
+    </form>
+
+
+    <nav class="nav-links">
+      <ul>
+       <li><a href="#courses">Courses</a></li>
+        <li><a href="#tracks">Learning Paths</a></li>
+        <li><a href="#instructors">Instructors</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </nav>
+
+
+    <div class="nav-actions">
+      <a class="btn login-btn" href="login.html">Log In</a>
+      <a class="btn signup-btn" href="register.html">Sign Up</a>
+      <button class="burger" aria-expanded="false" onclick="toggleMobileMenu(this)">☰</button>
+    </div>
+
+  </div>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+    <form class="mobile-search">
+      <input type="text" placeholder="Search courses…" />
+      <button type="submit">🔍</button>
+    </form>
+
+    <ul>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#tracks">Learning Paths</a></li>
+      <li><a href="#instructors">Instructors</a></li>
+      <li><a href="login.html">Log In</a></li>
+      <li><a class="signup-btn" href="register.html">Sign Up</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="course-hero">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeoqmEC3hmAuYOLEFCitbByZz66sQxr4Gaiw&s" alt="Java Banner">
+  <div class="course-hero-text">
+   <h1>Start Learning React Frontend Bootcamp</h1>
+    <p>Build modern, interactive web apps with React and reusable components.</p>
+  </div>
+</section>
+<section class="java-info-section">
+
+  <div class="java-block">
+    <div class="java-text">
+    <h1>What Is React?</h1>
+<p>
+  React is a popular JavaScript library for building fast and interactive user interfaces.
+  It uses a component-based architecture and a virtual DOM, allowing developers to create
+  dynamic, efficient, and scalable web applications with ease.
+</p>
+
+<h1>Who Created React?</h1>
+<p>
+  React was created by <strong>Jordan Walke</strong>, a software engineer at <strong>Facebook</strong>.
+  It was first released in <strong>2013</strong> and quickly became one of the most widely used
+  tools for modern frontend development. Today, React powers the interfaces of Facebook,
+  Instagram, WhatsApp, and thousands of other applications.
+</p>
+
+
+  
+    </div>
+
+    <div class="java-img1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwdO1kJumlVOpD4NcI-Wlr3URUe0fWveSOgA&s" width="500px" height="300px" alt="Java Code Image">
+    </div>
+  </div>
+
+
+
+  <div class="java-block reverse">
+    <div class="java-text">
+     <h2>What You Will Learn</h2>
+<p>
+  This course will give you a strong foundation in React — one of the most popular libraries
+  for building modern, dynamic user interfaces. Throughout the course, you will learn:
+  <br><br>
+
+  <strong>React fundamentals & core concepts</strong> — JSX, components, props, and state.<br>
+
+  <strong>Functional components & hooks</strong> — useState, useEffect, and custom hooks for reusable logic.<br>
+
+  <strong>Building interactive UIs</strong> — forms, events, lists, conditional rendering, component structure.<br>
+
+  <strong>Routing & API integration</strong> — fetching data, handling loading states, and navigation with React Router.<br><br>
+
+  <strong>State management patterns</strong> — lifting state, context API, and scalable component communication.<br>
+
+  <strong>Debugging & performance optimization</strong> — inspect components, memoization, and efficient rendering.
+</p>
+
+<p>
+  By the end of the course, you will be able to build real-world React applications,
+  understand component architecture, and create fast, responsive interfaces —
+  from small dynamic widgets to full single-page applications.
+</p>
+
+    </div>
+
+    <div class="java-img">
+      <img src="data:image/jpeg;base64,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" alt="Java Learning">
+    </div>
+  </div>
+
+</section>
+
+
+
+
+<section id="about-react" class="about-java container">
+  <h2 class="section-title">About React</h2>
+
+  <div class="about-grid">
+
+
+    <article class="about-card">
+      <img src="https://img.icons8.com/ultraviolet/96/react.png" alt="React logo" class="about-icon">
+      <h3>Short History</h3>
+      <p>
+        React was created by Jordan Walke at Facebook and released in 2013.  
+        It quickly became one of the most influential frontend libraries thanks to its
+        component-based design and high performance.
+      </p>
+    </article>
+
+
+    <article class="about-card">
+      <img src="https://img.icons8.com/3d-fluency/96/rocket.png" alt="Why choose React" class="about-icon">
+      <h3>Why Choose React</h3>
+      <ul class="why-list">
+        <li>Reusable component-based architecture</li>
+        <li>Huge ecosystem and global community</li>
+        <li>Perfect for modern, interactive user interfaces</li>
+      </ul>
+    </article>
+
+
+    <article class="about-card">
+      <img src="https://img.icons8.com/3d-fluency/96/mind-map.png" alt="Learn React" class="about-icon">
+      <h3>What You'll Learn</h3>
+      <ul class="learn-list">
+        <li>React basics: JSX, components, props, state</li>
+        <li>Hooks: useState, useEffect, custom hooks</li>
+        <li>Routing, events, data fetching</li>
+        <li>Your first single-page application</li>
+      </ul>
+      
+    </article>
+
+  </div>
+</section>
+
+
+
+</section>
+
+<h2 class="salary-title">React Developer Salaries</h2>
+
+<div class="salary-cards">
+
+  <div class="salary-card salary-card1">
+    <h3>₸300,000</h3>
+    <span class="level-badge">Junior</span>
+    <p>After completing the course</p>
+  </div>
+
+  <div class="salary-card salary-card2">
+    <h3>₸700,000</h3>
+    <span class="level-badge">Middle</span>
+    <p>1–5 years</p>
+  </div>
+
+  <div class="salary-card salary-card3">
+    <h3>₸1,200,000</h3>
+    <img src="https://cdn-icons-png.flaticon.com/512/1161/1161782.png" class="salary-img" alt="senior icon">
+    <span class="level-badge">Senior</span>
+    <p>5+ years</p>
+  </div>
+
+</div>
+<footer class="footer">
+  <div class="container footer-grid">
+
+    <div class="footer-col">
+      <h4>CodeLab</h4>
+      <p>Your trusted platform for modern online learning.  
+         Start your journey today.</p>
+    </div>
+
+    
+
+    <div class="footer-col">
+      <h5>Courses</h5>
+      <ul>
+        <li><a href="#">Programming</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Go</a></li>
+        <li><a href="#">AI & ML</a></li>
+        <li><a href="#">Design</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Learning Paths</a></li>
+        <li><a href="#">Instructors</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contacts">
+        <h5>Email: <a href="mailto:hello@codelab.com">hello@codelab.com</a></h5>
+        <h5>Phone: +7 705 123 45 67</h5>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-telegram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 CodeLab. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

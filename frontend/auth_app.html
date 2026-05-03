@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course - Auth (Simplified)</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #messageBox { display: none; }
+        .show-success, .show-error { display: none; }
+
+        .auth-wrapper {
+            width: 100%;
+            max-width: 400px; /* max-width: 400px */
+        }
+
+
+
+        .header-title {
+            text-align: center;
+            margin-bottom: 30px; 
+        }
+
+        .header-title h1 a {
+            color: #9c4dcc;
+            font-size: 32px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .auth-box {
+            background: #1e1e1e;
+            padding: 40px;
+            border-radius: 16px; 
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .auth-box h2 {
+            margin-bottom: 10px;
+            font-weight: normal;
+            color: #ffffff;
+        }
+
+        .auth-box p { 
+            color: #a0a0a0;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+  
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        .form-group label {
+            display: block;
+            color: #b39ddb;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: #2c2c2c; 
+            border: 2px solid transparent;
+            border-radius: 8px;
+            color: #ffffff;
+            outline: none; 
+            transition: 0.3s;
+        }
+
+        .form-group input:focus {
+            background: #333333;
+            border-color: #9c4dcc;
+            box-shadow: 0 0 8px rgba(156, 77, 204, 0.3);
+        }
+
+
+        .error-message {
+            color: #ff5252;
+            font-size: 12px;
+            display: block;
+            min-height: 16px; 
+        }
+
+ 
+        .submit-button {
+            width: 100%;
+            padding: 12px;
+            background: #6a1b9a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 5px;
+        }
+
+        .submit-button:hover {
+            background: #9c4dcc;
+            transform: translateY(-2px);
+        }
+
+        .auth-switch {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .auth-switch a {
+            color: #9c4dcc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .auth-switch a:hover {
+            color: #b39ddb;
+        }
+    </style>
+</head>
+<body translate="no">
+
+
+    <div id="messageBox" class=""></div>
+
+    <div class="auth-wrapper">
+        
+        <div class="header-title">
+            <h1><a href="main.html">CodeLab</a></h1>
+        </div>
+
+        <div class="auth-box">
+            
+            <div id="authContainer">
+                
+                <div id="loginView">
+                    <h2>С возвращением</h2>
+                    <p>Войдите в свой аккаунт</p>
+
+                    <form id="loginForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" placeholder="Введите ваш email" required>
+                            <span class="error-message" id="loginEmailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginPassword">Пароль</label>
+                            <input type="password" id="loginPassword" placeholder="Введите ваш пароль" required>
+                            <span class="error-message" id="loginPasswordError"></span>
+                        </div>
+
+                        <button type="submit" class="submit-button">Войти</button>
+                    </form>
+
+                    <p class="auth-switch">Нет аккаунта?
+                        <a href="#" onclick="showView('registerView')">Зарегистрироваться</a>
+                    </p>
+                </div>
+
+                
+                <div id="registerView" style="display: none;">
+                    <h2>Создать аккаунт</h2>
+                    <p>Присоединяйтесь, чтобы получить новые знания бесплатно!</p>
+
+                    <form id="registerForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Введите ваш email (имя)" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Пароль</label>
+                            <input type="password" id="password" placeholder="Введите ваш пароль" required>
+                            <span class="error-message" id="passwordError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Подтвердите пароль</label>
+                            <input type="password" id="confirmPassword" placeholder="Подтвердите ваш пароль" required>
+                            <span class="error-message" id="confirmPasswordError"></span>
+                        </div>
+
+                        <button type="submit" class="submit-button">Зарегистрироваться</button>
+                    </form>
+
+                    <p class="auth-switch">Уже есть аккаунт?
+                        <a href="#" onclick="showView('loginView')">Войти здесь</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        const loginView = document.getElementById('loginView');
+        const registerView = document.getElementById('registerView');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+
+        window.showView = function(viewId) {
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+            loginView.style.display = (viewId === 'loginView') ? 'block' : 'none';
+            registerView.style.display = (viewId === 'registerView') ? 'block' : 'none';
+        }
+
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            var name = document.getElementById('email');
+            var pw = document.getElementById('password');
+            var confirmPw = document.getElementById('confirmPassword');
+            
+            if (pw.value !== confirmPw.value) {
+                alert('ERROR: Пароли не совпадают.');
+                return;
+            }
+
+            localStorage.setItem('name', name.value);
+            localStorage.setItem('pw', pw.value);
+            
+            alert('Аккаунт успешно создан! Имя (Email) сохранено.');
+            showView('loginView');
+        });
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            var storedName = localStorage.getItem('name');
+            var storedPw = localStorage.getItem('pw');
+            var userName = document.getElementById('loginEmail');
+            var userPw = document.getElementById('loginPassword');
+
+            if (!storedName || !storedPw) {
+                alert('ERROR: Пользователь не зарегистрирован. Сначала создайте аккаунт.');
+            }
+            else if (userName.value !== storedName || userPw.value !== storedPw) {
+                alert('ERROR: Неверный Email или Пароль.');
+            } else {
+                alert('You are loged in.');
+                window.location.href = 'main.html';
+            }
+        });
+
+    </script>
+
+</body>
+</html>

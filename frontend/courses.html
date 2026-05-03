@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Courses</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --primary:#6c63ff;
+  --accent:#7b61ff;
+  --text:#111;
+  --muted:#777;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* 🔥 TOP SALE */
+.banner{
+  background: linear-gradient(90deg,#6c63ff,#4fc3f7);
+  color:#fff;
+  text-align:center;
+  padding:12px;
+  font-weight:600;
+}
+
+/* 🔥 NAVBAR */
+.nav{
+  background:rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  border-bottom:1px solid #eee;
+}
+.logo{font-weight:700;font-size:20px}
+.nav a{
+  text-decoration:none;
+  margin:0 10px;
+  color:#333;
+  font-weight:500;
+}
+
+/* 🔥 TITLE */
+.header{
+  padding:30px;
+}
+.header h1{
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+/* 🔥 CATEGORY PILLS */
+.categories{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.categories button{
+  border:none;
+  padding:8px 16px;
+  border-radius:20px;
+  background:#eee;
+  cursor:pointer;
+  transition:.3s;
+}
+.categories button.active{
+  background:var(--primary);
+  color:#fff;
+}
+.categories button:hover{
+  background:#ddd;
+}
+
+/* 🔥 SEARCH */
+.search{
+  margin-top:15px;
+}
+.search input{
+  width:320px;
+  padding:12px 16px;
+  border-radius:25px;
+  border:none;
+  background:#eee;
+}
+
+/* 🔥 MAIN LAYOUT */
+.container{
+  display:flex;
+  gap:30px;
+  padding:20px 30px;
+}
+
+/* 🔥 FILTER */
+.filter{
+  width:260px;
+  background:var(--card);
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+.filter h4{
+  margin-bottom:10px;
+}
+.filter label{
+  display:block;
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+/* 🔥 GRID */
+.grid{
+  flex:1;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:20px;
+}
+
+/* 🔥 CARD */
+.card{
+  background:var(--card);
+  border-radius:18px;
+  padding:18px;
+  position:relative;
+  transition:.3s;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+   position: relative;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* TAGS */
+.tag{
+  font-size:12px;
+  padding:5px 10px;
+  border-radius:10px;
+  display:inline-block;
+  margin-right:5px;
+}
+.tag.blue{background:#dbeafe;color:#2563eb;}
+.tag.red{background:#ffe4e6;color:#e11d48;}
+.tag.green{background:#dcfce7;color:#16a34a;}
+
+/* DISCOUNT */
+.discount{
+  position:absolute;
+  bottom:12px;
+  left:12px;
+  background:#111;
+  transform: translateX(80px); /* 👈 вот сдвиг вправо */
+  color:#fff;
+  padding:6px 10px;
+  border-radius:10px;
+  font-size:13px;
+}
+
+/* CARD TEXT */
+.card h3{
+  margin:10px 0;
+}
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .container{
+    flex-direction:column;
+  }
+  .filter{
+    width:100%;
+  }
+}
+.footer {
+  background: #1a0939; 
+  color: #e8e0ff;
+  padding: 3rem 0 1.5rem;
+  margin-top: 4rem;
+}
+
+
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.footer-col h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.footer-col h5 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #c9b6ff;
+  font-weight: 600;
+}
+
+.footer-col p {
+  color: #cfc2ff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+  color: #cfc2ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: #b9a9ff;
+}
+.discount {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  z-index: 2;
+}
+.course-card {
+  position: relative;
+}
+/* TOP BLOCK */
+.courses-top {
+  margin: 30px 0;
+}
+
+/* BIG SEARCH */
+.search-big {
+  width: 100%;
+  padding: 18px 25px;
+  border-radius: 30px;
+  border: none;
+  background: #f1f5f9;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+/* FILTERS */
+.filters-inline {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* BUTTONS */
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn.active {
+  background: #6d28d9;
+  color: white;
+}
+
+.filter-btn:hover {
+  background: #d1d5db;
+}
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<div class="banner">
+🔥 Spring Sale – 50% + Free AI Course
+</div>
+
+<div class="nav">
+  <div class="logo">CodeLab</div>
+  <div>
+    <a href="main.html">Home</a>
+   
+    
+  </div>
+</div>
+
+<div class="header">
+  <h1>Online Courses</h1>
+
+  <div class="courses-top">
+
+  <input type="text" placeholder="Search courses..." class="search-big">
+
+  <div class="filters-inline">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Programming</button>
+    <button class="filter-btn">Design</button>
+    <button class="filter-btn">AI</button>
+  </div>
+
+</div>
+
+  <div class="search">
+    <input placeholder="Search courses...">
+  </div>
+</div>
+
+<div class="container">
+
+  
+
+  <!-- COURSES -->
+  <div class="grid" id="grid"></div>
+
+</div>
+
+<script>
+const data = [
+  "Python Developer",
+  
+  "Frontend Developer",
+  "Cybersecurity",
+  "Data Scientist",
+  "UI/UX Designer",
+  "Machine Learning Engineer",
+  "Java Spring Boot",
+  "React Developer"
+];
+
+const grid = document.getElementById("grid");
+
+data.forEach(name => {
+
+  let link = "#";
+
+  if(name === "Python Developer"){
+    link = "course-detail.html";
+  }
+  else if(name === "Frontend Developer"){
+    link = "Frontend_Devoloper.html";
+  }
+  else if(name === "Cybersecurity"){
+    link = "Cybersecurity.html";
+  }
+  else if(name === "Data Scientist"){
+    link = "DataScientist.html";
+  }
+  else if(name === "UI/UX Designer"){
+    link = "ux-designer.html";
+  }
+  else if(name === "Machine Learning Engineer"){
+    link = "MachineLearningEngineer.html";
+  }
+  else if(name === "Java Spring Boot"){
+    link = "JavaSpringBoot.html";
+  }
+  else if(name === "React Developer"){
+    link = "react.html";
+  }
+
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <a href="${link}" style="text-decoration:none; color:inherit;">
+      
+      <div>
+        <span class="tag blue">Course</span>
+        <span class="tag red">Top</span>
+      </div>
+
+      <h3>${name}</h3>
+      <p>Duration: 6 months</p>
+
+      <div class="tag green">Job Support</div>
+
+      <div class="discount">-50%</div>
+
+    </a>
+  `;
+
+  grid.appendChild(card);
+});
+</script>
+<footer class="footer">
+  <div class="container footer-grid">
+
+    <div class="footer-col">
+      <h4>CodeLab</h4>
+      <p>Your trusted platform for modern online learning.  
+         Start your journey today.</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Courses</h5>
+      <ul>
+        <li><a href="#">Programming</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Go</a></li>
+        <li><a href="#">AI & ML</a></li>
+        <li><a href="#">Design</a></li>
+        
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Learning Paths</a></li>
+        <li><a href="#">Instructors</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contacts">
+      <h5>Email: <a href="mailto:hello@codelab.com">hello@codelab.com</a></h5>
+      <h5>Phone: +7 705 123 45 67</h5>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 CodeLab. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

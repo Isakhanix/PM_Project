@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python Course</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f6fb;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* TOP BANNER */
+.top-banner {
+  background: #4e6cff;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: white;
+}
+
+.nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* HERO */
+.hero {
+  background: black;
+  color: white;
+  padding: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-left {
+  max-width: 50%;
+}
+
+.hero h1 {
+  font-size: 50px;
+}
+
+.features {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.features div {
+  background: #1e1e1e;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+/* FORM */
+.form-box {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+}
+
+.form-box input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 10px;
+  background: purple;
+  color: white;
+  border: none;
+}
+
+/* SECTION */
+.section {
+  padding: 50px;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.purple {
+  background: linear-gradient(135deg,#6c63ff,#9f7cff);
+  color: white;
+}
+
+.gray {
+  background: #eee;
+}
+
+/* SALARY */
+.salary {
+  background: #111;
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.bar {
+  background: #caff00;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  color: black;
+}
+
+/* STORIES */
+.stories {
+  display: flex;
+  gap: 20px;
+}
+
+.story {
+  flex: 1;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.story img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.story p {
+  padding: 15px;
+}
+.salary{
+  padding:60px 20px;
+}
+
+.salary-card{
+  background: linear-gradient(135deg,#0d0d12,#1c1c25);
+  border-radius:30px;
+  padding:40px;
+  max-width:1000px;
+  margin:auto;
+  color:#fff;
+}
+
+.salary-card h2{
+  margin-bottom:30px;
+}
+
+.salary-row{
+  background:#3a3a45;
+  border-radius:20px;
+  margin-bottom:20px;
+  height:75px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* ОСНОВА */
+.salary-progress{
+  background:#d9ff00;
+  height:100%;
+  border-radius:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-left:20px;
+  color:#000;
+}
+
+/* ВОТ ГЛАВНОЕ 👇 РАЗНАЯ ДЛИНА */
+.level-1{
+  width:40%;
+}
+
+.level-2{
+  width:70%;
+}
+
+.level-3{
+  width:100%;
+}
+
+.salary-progress strong{
+  font-size:20px;
+}
+
+.salary-progress p{
+  font-size:13px;
+  margin:2px 0 0;
+}
+
+.salary-source{
+  font-size:12px;
+  color:#aaa;
+}
+.ai-block{
+  padding:60px 20px;
+}
+
+.ai-content{
+  max-width:1400px;
+  margin:auto;
+  background: linear-gradient(135deg,#7b2ff7,#9f5cff);
+  border-radius:30px;
+  padding:40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  color:#fff;
+}
+
+.ai-text{
+  max-width:500px;
+}
+
+.ai-text h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.ai-desc{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.ai-sub{
+  font-size:14px;
+  opacity:0.9;
+  margin-bottom:20px;
+}
+
+.ai-btn{
+  background:#fff;
+  color:#000;
+  padding:12px 20px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.ai-image{
+  position:relative;
+}
+
+.ai-image img{
+  width:500px;
+  border-radius:20px;
+}
+
+.ai-badge{
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  background:#000;
+  color:#fff;
+  padding:6px 12px;
+  border-radius:10px;
+  font-size:12px;
+}
+.teachers{
+  background:#0b0b14;
+  color:#fff;
+  padding:60px 40px;
+}
+
+.teachers h2{
+  font-size:36px;
+  margin-bottom:30px;
+}
+
+.teachers-grid{
+  display:flex;
+  gap:20px;
+}
+
+.teacher-card{
+  background:#fff;
+  color:#000;
+  border-radius:20px;
+  padding:20px;
+  width:23%;
+}
+
+.teacher-card img{
+  width:80px;
+  height:80px;
+  border-radius:15px;
+  object-fit:cover;
+  margin-bottom:15px;
+}
+
+.teacher-card h3{
+  font-size:16px;
+  margin-bottom:5px;
+}
+
+.teacher-card p{
+  font-size:14px;
+  color:#555;
+}
+.payment{
+  display:flex;
+  gap:30px;
+  padding:60px;
+  background:#000;
+}
+
+/* LEFT */
+.payment-left{
+  background:#f7f7f7;
+  border-radius:30px;
+  padding:40px;
+  width:60%;
+}
+
+.old-price{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin:10px 0;
+}
+
+.old-price span:first-child{
+  text-decoration:line-through;
+  color:#999;
+}
+
+.badge{
+  background:#7b2ff7;
+  color:#fff;
+  padding:5px 10px;
+  border-radius:10px;
+  font-size:12px;
+}
+
+.new-price{
+  font-size:40px;
+  font-weight:700;
+}
+
+.installment{
+  color:#777;
+}
+
+.bonuses{
+  margin-top:20px;
+}
+
+.bonus-item{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+
+/* RIGHT */
+.payment-right{
+  background:#fff;
+  border-radius:25px;
+  padding:25px;
+  width:40%;
+  position:relative;
+}
+
+.timer{
+  position:absolute;
+  top:-15px;
+  right:20px;
+  background:#c6ff00;
+  padding:8px 15px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+}
+
+/* KASPI */
+.kaspi-box{
+  background:#fff0f0;
+  border-radius:15px;
+  padding:10px;
+  margin-bottom:15px;
+  border:1px solid #ffdede;
+}
+
+.kaspi-box span{
+  color:red;
+  font-weight:700;
+}
+
+.limited{
+  color:#ff5c5c;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.payment-right input{
+  width:100%;
+  padding:18px;
+  border-radius:20px;
+  border:1px solid #e5e5e5;
+  background:#f5f5f5;
+  font-size:16px;
+  margin-top:15px;
+  outline:none;
+  transition:0.2s;
+}
+
+.payment-right input:focus{
+  border:2px solid #7b2ff7;
+  background:#fff;
+}
+
+.agreement{
+  font-size:12px;
+  color:#777;
+  display:flex;
+  gap:5px;
+  margin-top:10px;
+}
+.kaspi-banner{
+  position:relative;
+  margin-bottom:20px;
+}
+
+.kaspi-banner img{
+  width:100%;
+  border-radius:15px;
+}
+
+/* БЕЙДЖ */
+.discount-badge{
+  position:absolute;
+  right:10px;
+  bottom:10px;
+  background:#7b2ff7;
+  color:#fff;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+}
+.payment-right input {
+  width: 100%;
+  height: 55px;
+  padding: 0 16px;
+  border-radius: 20px;
+  border: 1px solid #e5e5e5;
+  background: #f5f5f5;
+  font-size: 14px;
+  margin-top: 15px;
+  box-sizing: border-box;
+}
+.phone-wrapper {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  border-radius: 20px;
+  border: 1px solid #e5e5e5;
+  background: #f5f5f5;
+  margin-top: 15px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.phone-code {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-right: 1px solid #ddd;
+}
+.phone-code select {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.phone-wrapper input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0 16px;
+  height: 100%;
+  outline: none;
+}
+.btn{
+  width:100%;
+  padding:18px;
+  margin-top:20px;
+
+  border:none;
+  border-radius:25px;
+
+  background:linear-gradient(90deg,#7b2ff7,#9f5cff);
+  color:#fff;
+
+  font-size:16px;
+  font-weight:600;
+
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* hover эффект */
+.btn:hover{
+  transform:scale(1.02);
+  box-shadow:0 10px 25px rgba(123,47,247,0.4);
+}
+
+/* при нажатии */
+.btn:active{
+  transform:scale(0.98);
+}
+.bonuses{
+  margin-top:30px;
+}
+
+.bonuses h4{
+  font-size:18px;
+  font-weight:600;
+}
+
+.highlight{
+  color:#7b2ff7;
+}
+
+.bonus-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:20px;
+}
+
+.bonus-item{
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+}
+
+.icon{
+  background:#f3e8ff;
+  color:#7b2ff7;
+  padding:12px;
+  border-radius:14px;
+  font-size:18px;
+}
+
+.bonus-item p{
+  font-size:14px;
+  line-height:1.4;
+}
+
+.old{
+  text-decoration:line-through;
+  color:#999;
+  margin-right:6px;
+}
+.footer {
+  background: #1a0939; 
+  color: #e8e0ff;
+  padding: 3rem 0 1.5rem;
+  margin-top: 4rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.footer-col h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.footer-col h5 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #c9b6ff;
+  font-weight: 600;
+}
+
+.footer-col p {
+  color: #cfc2ff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+  color: #cfc2ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: #b9a9ff;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.teachers {
+  background: #0b0b14;
+  color: #fff;
+  padding: 60px 40px;
+
+  margin-bottom: 80px; /* 🔥 лучше тут */
+}
+.payment {
+  display: flex;
+  gap: 30px;
+  padding: 60px;
+  background: #000;
+
+  margin-top: 80px; /* 🔥 ВОТ ЭТО ГЛАВНОЕ */
+}
+.reviews {
+  padding: 80px 0;
+  background: #f5f5f7;
+}
+
+.reviews h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* TOP BLOCK */
+.reviews-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: #eee;
+  border-radius: 25px;
+  padding: 30px;
+}
+
+.stat-card h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.stat-card .small {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.rating span {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.rating p {
+  font-size: 1.2rem;
+}
+
+/* REVIEWS */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.review-card {
+  background: #eee;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.review-card p {
+  color: #444;
+  line-height: 1.5;
+
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+.review-card {
+  background: #f3f4f6;
+  border-radius: 20px;
+  padding: 25px;
+  min-height: 180px;
+}
+.review-card h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.review-card p {
+  color: #666;
+  font-size: 14px;
+}
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.review-user img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.review-text {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-banner">
+🔥 DISCOUNT UP TO 50% + AI COURSE BONUS
+</div>
+
+<div class="nav">
+  <div><b>CodeLab</b></div>
+  <div>
+    <a href="main.html">Home</a>
+    <a href="courses.html">Courses</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p>Online course</p>
+    <h1>Frontend Developer</h1>
+    <p>Build modern websites and user interfaces</p>
+
+    <div class="features">
+      <div>HTML, CSS, JavaScript</div>
+      <div>React & UI frameworks</div>
+      <div>Job support</div>
+    </div>
+  </div>
+
+  <div class="form-box">
+    <h3>Apply Now</h3>
+    <input placeholder="Name">
+    <input placeholder="Email">
+    <input placeholder="Phone">
+    <button>Get Discount</button>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section">
+  <h2>Why Frontend?</h2>
+
+  <div class="cards">
+    <div class="card purple">
+     Frontend development is used to build websites, apps, and user interfaces
+    </div>
+
+    <div class="card gray">
+     Perfect for beginners and those who enjoy design and creativity
+    </div>
+  </div>
+</section>
+
+<!-- SALARY -->
+<section class="salary">
+  <div class="salary-card">
+
+    <h2>Your salary will grow with experience</h2>
+
+    <!-- 1 -->
+    <div class="salary-row">
+      <div class="salary-progress level-1">
+        <strong>from 550,000 ₸</strong>
+        <p>Junior, after course</p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="salary-row">
+      <div class="salary-progress level-2">
+        <strong>from 800,000 ₸</strong>
+        <p>Middle, 1–3 years experience</p>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="salary-row">
+      <div class="salary-progress level-3">
+        <strong>from 1,500,000 ₸</strong>
+        <p>Senior, 3+ years experience</p>
+      </div>
+    </div>
+
+    <span class="salary-source">
+      Source: Habr Career, HeadHunter
+    </span>
+
+  </div>
+</section>
+
+<!-- AI BLOCK -->
+<section class="ai-block">
+  <div class="ai-content">
+
+    <div class="ai-text">
+      <h2>AI is the new normal — and we’ll help you adapt</h2>
+
+      <p class="ai-desc">
+        Over 70% of IT specialists already use AI in their work.
+      </p>
+
+      <p class="ai-sub">
+        In our bonus course "AI Tools for Developers: ChatGPT & more",  
+        you will learn how to write code faster, debug smarter,  
+        and automate routine tasks.
+      </p>
+
+      <button class="ai-btn">Get a consultation</button>
+    </div>
+
+    <div class="ai-image">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="AI">
+      <div class="ai-badge">Bonus course</div>
+    </div>
+
+  </div>
+</section>
+
+<div>
+  <div class="teachers-grid">
+
+    <div class="teacher-card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg">
+      <h3>John Smith</h3>
+      <p>Product Analyst Team Lead at Citrix & Wrike</p>
+      <p class="exp">
+      Citrix (USA) • 6+ years experience
+      </p>
+    </div>
+
+    <div class="teacher-card">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg">
+      <h3>Aliya Nur</h3>
+      <p>Team Lead at SberData</p>
+      <p class="exp">5+ years experience</p>
+    </div>
+
+    <div class="teacher-card">
+      <img src="https://randomuser.me/api/portraits/men/22.jpg">
+      <h3>David Lee</h3>
+      <p>Data Science Manager at Visa</p>
+      <p class="exp">7+ years in Data Science</p>
+    </div>
+
+    <div class="teacher-card">
+      <img src="https://randomuser.me/api/portraits/men/55.jpg">
+      <h3>Arman Bek</h3>
+      <p>AI Team Lead at SberService</p>
+      <p class="exp">SberService • 6+ years</p>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<section class="reviews">
+
+  <h2>Reviews about CodeLab</h2>
+
+  <!-- TOP STATS -->
+  <div class="reviews-stats">
+
+    <div class="stat-card">
+      <h1>4.8 / 5</h1>
+      <p>Average instructor rating</p>
+
+      <h1>4.7 / 5</h1>
+      <p>Program rating</p>
+    </div>
+
+    <div class="stat-card center">
+      <h1>5900+</h1>
+      <p>Reviews on independent platforms</p>
+
+      <div class="rating">
+        <span>5.0</span>
+        <p>Yandex</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <h1>96%</h1>
+      <p>Students are satisfied with the course</p>
+
+      <span class="small">
+        Based on 150,000+ reviews
+      </span>
+    </div>
+
+  </div>
+
+  <!-- REVIEW CARDS -->
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <div class="user">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+        <h4>Arthur</h4>
+      </div>
+      <p>
+       I studied on this platform for over a year and had a really positive experience. The learning system is very well organized and user-friendly, which makes it easy to stay on track. All materials are structured step by step, so even complex topics become understandable.
+
+       The mentors explain everything clearly and are always ready to help if something is not clear. I especially liked that there are practical tasks after each module — it really helps закрепить знания.
+
+       Overall, the course gave me confidence and strong fundamentals, and I feel much more prepared to start working in IT.
+      </p>
+    </div>
+
+    <div class="review-card">
+      <div class="user">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg">
+        <h4>Pavel</h4>
+      </div>
+      <p>
+        I started from zero and now I have a solid understanding of coding basics. The learning process was smooth and well-structured, which made it easy to follow even without prior experience.
+
+        The mentors explain everything clearly and are always ready to support when questions arise. Thanks to the practical tasks, I was able to apply what I learned and build real skills step by step.
+      </p>
+    </div>
+
+    <div class="review-card">
+      <div class="user">
+        <img src="https://randomuser.me/api/portraits/women/50.jpg">
+        <h4>Ekaterina</h4>
+      </div>
+      <p>
+       I’ve always wanted to build a career in IT, and this course gave me the opportunity to finally start. Everything is explained in a simple and accessible way, even for beginners.
+
+       The support team is amazing — they respond quickly and genuinely help when you get stuck. This course really boosted my confidence and motivation.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+<section class="payment">
+
+  <!-- LEFT -->
+  <div class="payment-left">
+
+    <h2>Course price</h2>
+
+    <div class="old-price">
+      <span>54,256 ₸</span>
+      <span class="badge">-50%</span>
+    </div>
+
+    <h1 class="new-price">27,128 ₸ / month</h1>
+    <p class="installment">Installment plan for 24 months</p>
+
+    <hr>
+
+    <div class="bonuses">
+
+  <h4>
+    Apply now <span class="highlight">right now</span><br>
+    and get bonuses:
+  </h4>
+
+  <div class="bonus-grid">
+
+    <div class="bonus-item">
+      <div class="icon">🎓</div>
+      <p>
+        1-year English course <br>
+        <span class="old">340,000 ₸</span> FREE
+      </p>
+    </div>
+
+    <div class="bonus-item">
+      <div class="icon">🤖</div>
+      <p>
+        AI course (ChatGPT, Midjourney & more) <br>
+        <span class="old">465,000 ₸</span> FREE
+      </p>
+    </div>
+
+    <div class="bonus-item">
+      <div class="icon">📚</div>
+      <p>
+        4 additional courses of your choice <br>
+        <span class="old">862,000 ₸</span> FREE
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="payment-right">
+
+    <!-- TIMER -->
+    <div class="timer">Offer ends in: 01:46:30</div>
+    <div class="kaspi-banner">
+  <img src="https://ms1.geekbrains.kz/images/02ee20988aecd8aa741e5ef3791ce6d1/resize/w=960,h=195,q=34/banner_image/11/35/20/1135200f7e33f10f6f9b55dd197a945d.jpg" alt="Kaspi">
+   <div class="discount-badge">-50%</div>
+
+</div>
+
+
+
+    <h3>Apply now</h3>
+    <p class="limited">🔥 Limited seats available</p>
+
+   <input type="text" placeholder="Name">
+   <input type="email" placeholder="Email"> 
+    <div class="phone-wrapper">
+
+  <div class="phone-code">
+    <select>
+      <option>🇰🇿 +7</option>
+      <option>🇷🇺 +7</option>
+      <option>🇺🇸 +1</option>
+      <option>🇬🇧 +44</option>
+      <option>🇩🇪 +49</option>
+    </select>
+  </div>
+
+  <input type="tel" placeholder="Phone number">
+
+</div>
+
+    <button class="btn">Enroll with discount</button>
+
+    
+
+  </div>
+
+</section>
+<script>
+href="course-detail.html?course=${skill.id}"
+
+const title = document.querySelector("h1");
+
+if (course === "python") {
+  title.textContent = "Python Developer with AI";
+}
+
+if (course === "java") {
+  title.textContent = "Java Backend Developer";
+}
+</script>
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <h4>CodeLab</h4>
+        <p>Your trusted platform for modern online learning.  
+        Start your journey today.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Courses</h5>
+        <ul>
+          <li><a href="#">Programming</a></li>
+          <li><a href="#">Java</a></li>
+          <li><a href="#">Python</a></li>
+          <li><a href="#">Go</a></li>
+          <li><a href="#">AI & ML</a></li>
+          <li><a href="#">Design</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Learning Paths</a></li>
+          <li><a href="#">Instructors</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contacts">
+        <h5>Email: <a href="mailto:hello@codelab.com">hello@codelab.com</a></h5>
+        <h5>Phone: +7 705 123 45 67</h5>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-telegram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 CodeLab. All rights reserved.</p>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+</html>

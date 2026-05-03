@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page </title>
+     <link rel="stylesheet" href="main.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     
+
+     
+</head>
+<body>
+    <header class="site-header">
+  <div class="container nav-inner">
+
+
+    <a class="logo" href="#">CodeLab</a>
+
+
+    <form class="nav-search" role="search">
+      <button type="submit" class="search-btn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+      </button>
+      <input type="text" placeholder="Search courses..." aria-label="Search">
+    </form>
+
+
+    <nav class="nav-links">
+      <ul>
+       <li><a href="courses.html">Courses</a></li>
+      <li><a href="#Benefits">Benefits</a></li>
+      <li><a href="#graduates">Reviews</a></li>
+      
+      </ul>
+    </nav>
+
+     <div class="nav-actions">
+      <a class="btn login-btn" href="auth_app.html">Log In</a>
+      <a class="btn signup-btn" href="auth_app.html">Sign Up</a>
+      <button class="burger" aria-expanded="false" onclick="toggleMobileMenu(this)">☰</button>
+    </div>
+
+
+
+   
+
+  </div>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+    <form class="mobile-search">
+      <input type="text" placeholder="Search courses…" />
+      <button type="submit">🔍</button>
+    </form>
+
+    
+  </div>
+</header>
+
+<div >
+   <section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>Learn More, Spend Less</h1>
+      <p>Black Friday deals on thousands of courses.</p>
+      <br>
+      <button id="startBtn" class="start-btn">Start learning</button>
+
+    </div>
+  </div>
+</section>
+
+<section class="why-it premium">
+  <div class="container">
+
+    <h2 class="section-title">Why CodeLab</h2>
+    <p class="section-subtitle">
+      Build a future-proof career with high demand, real-world skills, and global opportunities.
+    </p>
+
+    <div class="premium-grid">
+
+      <!-- CARD 1 -->
+      <div class="premium-card glass animate">
+        <span class="badge">🚀 Career Growth</span>
+        <h3>Fast-growing industry</h3>
+        <p>
+          IT is one of the fastest-growing industries with endless opportunities.
+          You can work remotely, earn globally, and grow quickly.
+        </p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="premium-card glass animate delay">
+        <span class="badge">💰 High Income</span>
+        <h3>Competitive salaries</h3>
+        <p>
+          Developers and engineers earn above-average salaries even at entry level,
+          with strong growth in just a few years.
+        </p>
+      </div>
+
+      <!-- BIG CARD -->
+      <div class="premium-card big glass animate delay2">
+        <span class="badge">🌍 Global Market</span>
+        <h3>Work anywhere in the world</h3>
+        <p>
+          IT skills are universal. You can work with international companies,
+          freelance, or build your own products.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section id="graduates">
+    <div class="container graduates-container">
+        <h2 class="graduates-title">Our Graduates</h2>
+        <div class="graduate-grid">
+
+            <div class="graduate-card">
+                <img src="https://raw.githubusercontent.com/AssemBota/online_platform/main/5271888733563194936.jpg" alt="Graduate">
+                <h3>Assem Botabayeva</h3>
+                <p class="role">Python and Go Courses</p>
+                <p>“I started with zero experience, but step by step I learned python and basics of Go language. Just 3 months after graduating, I landed my first job in IT. This course gave me confidence and real skills.”</p>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+</div>
+<footer class="footer">
+  <div class="container footer-grid">
+
+    <div class="footer-col">
+      <h4>CodeLab</h4>
+      <p>Your trusted platform for modern online learning.  
+         Start your journey today.</p>
+    </div>
+
+    
+
+    <div class="footer-col">
+      <h5>Courses</h5>
+      <ul>
+        <li><a href="#">Programming</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">Go</a></li>
+        <li><a href="#">AI & ML</a></li>
+        <li><a href="#">Design</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Learning Paths</a></li>
+        <li><a href="#">Instructors</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contacts">
+        <h5>Email: <a href="mailto:hello@codelab.com">hello@codelab.com</a></h5>
+        <h5>Phone: +7 705 123 45 67</h5>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-telegram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 CodeLab. All rights reserved.</p>
+  </div>
+</footer>
+
+<div id="applyModal" class="apply-modal">
+  <div class="apply-backdrop"></div>
+
+  <div class="apply-card">
+    <button class="apply-close" id="applyClose">&times;</button>
+    <h3>Submit an Application</h3>
+
+    <form id="applyForm">
+
+      <label>
+        Full Name
+        <input type="text" id="fullname" required placeholder="John Smith">
+      </label>
+
+      <label>
+        Phone Number
+        <input type="tel" id="phone" required placeholder="+1 234 567 890">
+      </label>
+
+      <label>
+        Course
+        <select id="courseSelect" required>
+          <option value="">— Select a course —</option>
+          <option>Java Fundamentals</option>
+          <option>Python for Beginners</option>
+          <option>Go Language Basics</option>
+          <option>React Frontend Bootcamp</option>
+        </select>
+      </label>
+       <br>
+       <br>
+      <button type="submit" class="start-btn">Submit</button>
+    </form>
+  </div>
+  
+</div>
+
+<script src="main.js"></script>
+<script>
+async function loadCourses() {
+  const res = await fetch("http://localhost:8080/skills");
+  const data = await res.json();
+
+  const container = document.getElementById("courses");
+  container.innerHTML = "";
+
+  data.forEach(skill => {
+    const card = document.createElement("div");
+    card.className = "course-card";
+    card.innerHTML = `
+      <h3>${skill.name}</h3>
+      <button onclick="enroll(${skill.id})">Enroll</button>
+    `;
+    container.appendChild(card);
+  });
+}
+
+async function enroll(id) {
+  await fetch("http://localhost:8080/enrollments", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ moduleId: id, userId: 1 })
+  });
+
+  alert("Enrolled!");
+}
+
+window.onload = loadCourses;
+</script>
+
+</body>
+</html>
+
